@@ -1,19 +1,18 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:hmtk_app/presentation/user/reset_password.dart';
 import 'package:hmtk_app/utils/color_pallete.dart';
 import 'package:hmtk_app/widget/button.dart';
-import 'package:hmtk_app/widget/main_navigator.dart';
 import 'package:hmtk_app/widget/template_page.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class ResetPassword extends StatefulWidget {
+  const ResetPassword({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<ResetPassword> createState() => _SignInState();
 }
 
-class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
+class _SignInState extends State<ResetPassword>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   var fullname = TextEditingController();
   var nim = TextEditingController();
@@ -73,7 +72,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
-                        'Login',
+                        'RESET PASSWORD',
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -90,15 +89,8 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                   child: TextFormField(
                     controller: email,
                     decoration: InputDecoration(
-                      hintText: 'ivandaniar@gmail.com',
+                      hintText: 'New Password',
                       border: InputBorder.none,
-                      prefixIcon: Container(
-                          width: 100,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Email',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
                     ),
                   ),
                 ),
@@ -111,60 +103,28 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                   ),
                   child: TextFormField(
                     controller: password,
-                    obscureText: true,
                     decoration: InputDecoration(
-                      hintText: '*******',
+                      hintText: 'Confirm Password',
                       border: InputBorder.none,
-                      prefixIcon: Container(
-                          width: 100,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Password',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ResetPassword(),
-                              ));
-                        },
-                        child: Text(
-                          'Forgot password?',
-                        ))
-                  ],
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: InkWell(
                     onTap: () {
-                      if (email.text == 'ivandaniar@gmail.com' &&
-                          password.text == '123456') {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MainNavigator(),
-                            ),
-                            (route) => false);
-                      } else {
-                        AwesomeDialog(
-                          context: context,
-                          dialogType: DialogType.error,
-                          animType: AnimType.rightSlide,
-                          title: 'Email dan password yang anda masukkan salah!',
-                          btnOkOnPress: () {},
-                        ).show();
-                      }
+                      AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.success,
+                        animType: AnimType.rightSlide,
+                        title: 'Password Changed!',
+                        btnOkOnPress: () {
+                          Navigator.pop(context);
+                        },
+                      ).show();
                     },
                     child: MyButton(
-                      txt: 'Login',
+                      txt: 'Reset',
                       height: 45,
                     ),
                   ),

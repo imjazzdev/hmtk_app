@@ -7,15 +7,14 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(children: [
-        Image.asset(
-          'assets/bg.png',
-          height: double.maxFinite,
-          width: double.maxFinite,
-        ),
-        widget
-      ]),
-    );
+    return Stack(children: [
+      Image.asset(
+        'assets/bg.png',
+        height: double.maxFinite,
+        width: double.maxFinite,
+        fit: BoxFit.cover,
+      ),
+      widget
+    ]);
   }
 }
