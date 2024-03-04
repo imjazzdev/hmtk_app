@@ -143,7 +143,7 @@ class AspirasiDialog extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TambahActivty(),
+                      builder: (context) => DaftarAspirasi(),
                     ),
                   );
                 },
