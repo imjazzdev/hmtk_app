@@ -143,7 +143,7 @@ class AspirasiDialog extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DaftarAspirasi(),
+                      builder: (context) => InputAspirasi(),
                     ),
                   );
                 },
@@ -158,7 +158,7 @@ class AspirasiDialog extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => EditAktivity(),
+                      builder: (context) => DaftarAspirasi(),
                     ),
                   );
                 },
