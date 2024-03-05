@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hmtk_app/component/activity.dart';
+import 'package:hmtk_app/admin/daftar_aktivity.dart';
 import 'package:hmtk_app/component/drawer.dart';
 import 'package:hmtk_app/utils/color_pallete.dart' show ColorPallete;
 import 'package:image_picker/image_picker.dart';
@@ -271,7 +272,14 @@ class _TambahActivtyState extends State<EditAktivity> {
                             style: ElevatedButton.styleFrom(
                               primary: const Color.fromARGB(255, 1, 122, 5),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                // DetailPage adalah halaman yang dituju
+                                MaterialPageRoute(
+                                    builder: (context) => DaftarAktivity()),
+                              );
+                            },
                             child: Text('Edit')),
                       )
                     ],
