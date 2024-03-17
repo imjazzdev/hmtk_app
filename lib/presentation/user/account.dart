@@ -15,18 +15,6 @@ class Account extends StatelessWidget {
             width: double.maxFinite,
             fit: BoxFit.cover,
           ),
-          Positioned(
-              top: 30,
-              left: 20,
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 30,
-                  ))),
           Container(
             child: ListView(
               padding: EdgeInsets.all(25),

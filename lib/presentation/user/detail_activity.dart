@@ -43,35 +43,39 @@ class _DetailActivityState extends State<DetailActivity> {
           width: double.maxFinite,
           height: double.maxFinite,
           child: Stack(
+            alignment: Alignment.center,
             children: [
-              Image.asset(
-                'assets/img-futsal.png',
-                height: MediaQuery.of(context).size.height * 0.6,
-                width: double.maxFinite,
-                fit: BoxFit.cover,
-              ),
-              Positioned(
-                top: 300,
-                left: 60,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Watch a match!',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    Text(
-                      'Tekkom VS Elektro',
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ],
+              Align(
+                alignment: Alignment.topCenter,
+                child: Image.asset(
+                  'assets/img-futsal.png',
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  width: double.maxFinite,
+                  fit: BoxFit.cover,
                 ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Watch a match!',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Text(
+                    'Tekkom VS Elektro',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  )
+                ],
               ),
               Align(
                 alignment: Alignment.bottomCenter,

@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:hmtk_app/widget/button.dart';
 import 'package:hmtk_app/widget/template_page.dart';
@@ -95,9 +96,11 @@ class _MenuShopDetailState extends State<MenuShopDetail> {
                                         CircleAvatar(
                                           child: IconButton(
                                               onPressed: () {
-                                                setState(() {
-                                                  jumlah--;
-                                                });
+                                                if (jumlah > 1) {
+                                                  setState(() {
+                                                    jumlah--;
+                                                  });
+                                                }
                                               },
                                               icon: Icon(Icons.remove)),
                                         ),
@@ -203,9 +206,20 @@ class _MenuShopDetailState extends State<MenuShopDetail> {
                         SizedBox(
                           height: 20,
                         ),
-                        MyButton(
-                          txt: 'Add to Cart',
-                          width: double.maxFinite,
+                        InkWell(
+                          onTap: () {
+                            AwesomeDialog(
+                              context: context,
+                              dialogType: DialogType.success,
+                              animType: AnimType.rightSlide,
+                              title: 'Berhasil menambahkan data',
+                              btnOkOnPress: () {},
+                            ).show();
+                          },
+                          child: MyButton(
+                            txt: 'Add to Cart',
+                            width: double.maxFinite,
+                          ),
                         ),
                       ],
                     ),

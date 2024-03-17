@@ -204,7 +204,11 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
                       'Already a member?',
                       style: TextStyle(fontStyle: FontStyle.italic),
                     ),
-                    TextButton(onPressed: () {}, child: Text('Login'))
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Login'))
                   ],
                 ),
                 Align(

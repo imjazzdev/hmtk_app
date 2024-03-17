@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hmtk_app/presentation/user/account.dart';
 import 'package:hmtk_app/utils/color_pallete.dart';
 
 import '../presentation/user/home.dart';
+import '../presentation/user/timeline.dart';
 
 class MainNavigator extends StatefulWidget {
   const MainNavigator({super.key});
@@ -12,9 +15,9 @@ class MainNavigator extends StatefulWidget {
 }
 
 class _MainNavigatorState extends State<MainNavigator> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   List<Widget> _screen = [
-    Home(),
+    Timeline(),
     Home(),
     Account(),
   ];
@@ -37,11 +40,20 @@ class _MainNavigatorState extends State<MainNavigator> {
                 unselectedItemColor: Colors.white,
                 items: [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.compass_calibration), label: 'Timeline'),
+                      icon: Image.asset('assets/timeline.png'),
+                      label: 'Timeline'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home), label: 'Home'),
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      label: 'Home'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.person), label: 'Account'),
+                      icon: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      label: 'Account'),
                 ],
                 onTap: (i) {
                   setState(() {

@@ -1,5 +1,6 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:hmtk_app/presentation/admin/dashboard.dart';
 import 'package:hmtk_app/presentation/user/reset_password.dart';
 import 'package:hmtk_app/utils/color_pallete.dart';
 import 'package:hmtk_app/widget/button.dart';
@@ -151,6 +152,14 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                             context,
                             MaterialPageRoute(
                               builder: (context) => MainNavigator(),
+                            ),
+                            (route) => false);
+                      } else if (email.text == 'admin' &&
+                          password.text == 'admin') {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Dashboard(),
                             ),
                             (route) => false);
                       } else {

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hmtk_app/presentation/user/aspiration/menu_aspiration.dart';
 import 'package:hmtk_app/presentation/user/detail_activity.dart';
+import 'package:hmtk_app/presentation/user/drawer/drawer.dart';
+import 'package:hmtk_app/presentation/user/fun-tk/menu_jadwal_funtk.dart';
 import 'package:hmtk_app/utils/color_pallete.dart';
 import 'package:hmtk_app/widget/item_activity.dart';
 import 'package:hmtk_app/widget/template_page.dart';
 
+import 'laboratory/menu_laboratory.dart';
 import 'shop/menu_shop.dart';
 
 class Home extends StatelessWidget {
@@ -30,12 +34,21 @@ class Home extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DrawerUser(),
+                                ));
+                          },
                           icon: Icon(
                             Icons.menu,
                             color: Colors.white,
                             size: 30,
                           )),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Row(
@@ -144,7 +157,13 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MenuJadwalFunTK(),
+                            ));
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -170,7 +189,13 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MenuLaboratory(),
+                            ));
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -196,7 +221,13 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MenuAspiration(),
+                            ));
+                      },
                       child: Column(
                         children: [
                           Container(

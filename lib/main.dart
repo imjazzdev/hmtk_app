@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hmtk_app/presentation/user/start.dart';
 import 'package:hmtk_app/utils/color_pallete.dart';
+import 'presentation/user/splash.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -17,11 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Start(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: GoogleFonts.poppinsTextTheme(),
-          appBarTheme: AppBarTheme(color: Colors.green)),
+          appBarTheme:
+              AppBarTheme(color: ColorPallete.greenprim, elevation: 0.8)),
     );
   }
 }
