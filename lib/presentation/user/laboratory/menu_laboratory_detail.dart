@@ -313,13 +313,35 @@ class _MenuLaboratoryDetailState extends State<MenuLaboratoryDetail> {
                                               ),
                                               Expanded(
                                                 flex: 7,
-                                                child: TextField(
-                                                  decoration: InputDecoration(
-                                                      border: InputBorder.none,
-                                                      hintStyle: TextStyle(
-                                                          fontSize: 12),
-                                                      hintText:
-                                                          'Tambahkan komentar anda..'),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Expanded(
+                                                      flex: 4,
+                                                      child: TextField(
+                                                        decoration: InputDecoration(
+                                                            border: InputBorder
+                                                                .none,
+                                                            hintStyle:
+                                                                TextStyle(
+                                                                    fontSize:
+                                                                        12),
+                                                            hintText:
+                                                                'Tambahkan komentar anda..'),
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                        flex: 1,
+                                                        child: IconButton(
+                                                            onPressed: () {},
+                                                            icon: Icon(
+                                                              Icons.send,
+                                                              color:
+                                                                  Colors.blue,
+                                                            )))
+                                                  ],
                                                 ),
                                               )
                                             ],

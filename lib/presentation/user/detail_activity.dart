@@ -73,14 +73,14 @@ class _DetailActivityState extends State<DetailActivity> {
                         color: Colors.white),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 150,
                   )
                 ],
               ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.4,
+                  height: MediaQuery.of(context).size.height * 0.45,
                   width: double.maxFinite,
                   padding:
                       EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 10),

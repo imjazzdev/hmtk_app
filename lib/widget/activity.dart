@@ -245,7 +245,7 @@ class ActivityFrame extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignIn(),
+                            builder: (context) => Start(),
                           ),
                           (route) => false);
                       // Navigator.pop(context);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hmtk_app/presentation/user/signin.dart';
+import 'package:hmtk_app/presentation/user/start.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
@@ -173,7 +174,7 @@ class Account extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignIn(),
+                            builder: (context) => Start(),
                           ),
                           (route) => false);
                     },
